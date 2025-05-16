@@ -5,5 +5,12 @@
     "quantity": 500,
     "price": 35,
     "location": "Hamburg"
+  },
+  {
+    "id": 1747291919649,
+    "name": "Wickelauflage",
+    "quantity": 500,
+    "price": 45,
+    "location": "Hamburg"
   }
 ]

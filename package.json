@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^12.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18"
   }
 }
