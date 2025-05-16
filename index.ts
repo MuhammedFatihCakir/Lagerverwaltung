@@ -35,7 +35,12 @@ const saveInventory = async (items: Product[]): Promise<void> => {
 // 3. Produkt hinzufuegen
 const addProduct = async (): Promise<void> => {
     const inventory = await loadInventory();
-    const { name, quantity, price, location } = await inquirer.prompt([
+    const { name, quantity, price, location } = await inquirer.prompt<{
+        name: string;
+        quantity: number;
+        price: number;
+        location: string;
+    }>([
         {
             type: 'input',
             name: 'name',
@@ -45,13 +50,23 @@ const addProduct = async (): Promise<void> => {
             type: 'number',
             name: 'quantity',
             message: 'Menge:',
-            validate: (val) => val >= 0 || 'Bitte eine gültige Menge eingeben.'
+            validate: (val) => {
+                if (typeof val !== 'number' || isNaN(val) || val < 0) {
+                  return 'Bitte eine gültige Menge eingeben.';
+                }
+                return true;
+              }
         },
         {
             type: 'number',
             name: 'price',
             message: 'Preis:',
-            validate: (val) => val >= 0 || 'Bitte einen gültigen Preis eingeben.'
+            validate: (val) => {
+                if (typeof(val) !== 'number' || isNaN(val) || val < 0) {
+                    return 'Bitte eine gültige Menge eingeben.';
+                }
+                return true;
+            }
         },
         {
             type: 'input',
@@ -66,31 +81,30 @@ const addProduct = async (): Promise<void> => {
 }
 // 4. Produkte listen
 
-const listProducts = async () => {
+const listProducts = async (): Promise<void> => {
     const inventory = await loadInventory();
     if(inventory.length === 0) {
         console.log('📭 Keine Produkte im Lager.\n');
         return;
     }
 
-    let i = 0;
-    inventory.forEach(product => {
-        i++;
+    inventory.forEach((product, index) => {
         console.log(
-            `${i}. ${product.name} - Menge: ${product.quantity}, Preis: ${product.price}€, Lagerort: ${product.location}`
-        )});
-}
+          `${index + 1}. ${product.name} - Menge: ${product.quantity}, Preis: ${product.price}€, Lagerort: ${product.location}`
+        );
+      });
+    };
 
 
 // 5. Produkt anzeigen
-const viewProduct = async () => {
+const viewProduct = async (): Promise<void> => {
     const inventory = await loadInventory();
     if (inventory.length === 0) {
         console.log('📭 Keine Produkte im Lager.\n');
         return;
     }
 
-    const { id } = await inquirer.prompt({
+    const { id } = await inquirer.prompt<{ id: number}>({
         type: 'list',
         name: 'id',
         message: 'Welches Produkt möchtest du anzeigen?',
@@ -101,17 +115,19 @@ const viewProduct = async () => {
     })
 
     let selectedItem = inventory.find(product => product.id === id);
-    console.log(`
-Produktdetails:
-- Name: ${selectedItem.name}
-- Menge: ${selectedItem.quantity}
-- Preis: ${selectedItem.price}€
-- Lagerort: ${selectedItem.location}`);
+    if(selectedItem) {
+        console.log(`
+    Produktdetails:
+    - Name: ${selectedItem.name}
+    - Menge: ${selectedItem.quantity}
+    - Preis: ${selectedItem.price}€
+    - Lagerort: ${selectedItem.location}`);
+    }
 }
 
 // 6. Produkt bearbeiten
 
-const editProduct = async () => {
+const editProduct = async (): Promise<void> => {
     const inventory = await loadInventory();
     
     if (inventory.length === 0) {
@@ -119,7 +135,7 @@ const editProduct = async () => {
         return;
     }
 
-    const { id } = await inquirer.prompt({
+    const { id } = await inquirer.prompt<{ id: number }>({
         type: 'list',
         name: 'id',
         message: 'Welches Produkt möchtest du bearbeiten?',
@@ -130,8 +146,17 @@ const editProduct = async () => {
     })
 
     const item = inventory.find(product => product.id === id);
+    if(!item) {
+        console.log('❌ Produkt nicht gefunden.');
+        return;
+    }
 
-    const { name, quantity, price, location } = await inquirer.prompt([
+    const { name, quantity, price, location } = await inquirer.prompt<{
+        name: string;
+        quantity: number;
+        price: number;
+        location: string;
+    }>([
         {
             type: 'input',
             name: 'name',
@@ -140,13 +165,13 @@ const editProduct = async () => {
 
         },
         {
-            type: 'input',
+            type: 'number',
             name: 'quantity',
             message: 'Neue Menge:',
             default: item.quantity,
         },
         {
-            type: 'input',
+            type: 'number',
             name: 'price',
             message: 'Neuer Preis:',
             default: item.price,
@@ -170,14 +195,14 @@ const editProduct = async () => {
 // 7. Produkt löschen
 
 
-const deleteProduct = async () => {
+const deleteProduct = async (): Promise<void> => {
     const inventory = await loadInventory();
     if (inventory.length === 0) {
         console.log('📭 Keine Produkte im Lager.\n');
         return;
     }
 
-    const { id } = await inquirer.prompt({
+    const { id } = await inquirer.prompt<{ id: number }>({
         type: 'list',
         name: 'id',
         message: 'Welches Produkt möchtest du löschen?',
@@ -186,37 +211,39 @@ const deleteProduct = async () => {
             value: item.id,
         }))
     });
+    const latestInventory = await loadInventory();
+    const updatedInventory = latestInventory.filter(product => product.id !== id);
+    if (updatedInventory.length === latestInventory.length) {
+        console.log('❌ Produkt konnte nicht gelöscht werden (nicht gefunden).');
+        return;
+    }
+    
 
-    const updatedInventory = inventory.filter(product => product.id !== id);
     await saveInventory(updatedInventory);
     console.log('🗑️ Produkt gelöscht.\n');
 }
 
 // 8. mainmenu erstellen
 
-const mainMenu = async () => {
+const mainMenu = async (): Promise<void> => {
     while(true) {
         
-        const { action } = await inquirer.prompt({
+        const { action } = await inquirer.prompt<{ action: (() => Promise<any>) | 'exit' }>({
             type: 'list',
             name: 'action',
             message: 'Was möchtest du tun?',
             choices: [
-            {name: '➕ Produkt hinzufügen', value: 'add'},
-            {name: '📋 Alle Produkte anzeigen', value: 'list'},
-            {name: '🔍 Produktdetails anzeigen', value: 'view'},
-            {name: '✏️  Produkt bearbeiten', value: 'edit'},
-            {name: '🗑️  Produkt löschen', value: 'delete'},
+            {name: '➕ Produkt hinzufügen', value: addProduct},
+            {name: '📋 Alle Produkte anzeigen', value: listProducts},
+            {name: '🔍 Produktdetails anzeigen', value: viewProduct},
+            {name: '✏️  Produkt bearbeiten', value: editProduct},
+            {name: '🗑️  Produkt löschen', value: deleteProduct},
             {name: '🚪 Beenden', value: 'exit'},
             ] 
         })
+        if (action === 'exit') return;
+        await action();
 
-        if(action === 'add') await addProduct();
-        else if(action === 'list') await listProducts(); 
-        else if(action === 'edit') await editProduct();
-        else if(action === 'view') await viewProduct();
-        else if(action === 'delete') await deleteProduct(); 
-        else break;
     }
 }
 
