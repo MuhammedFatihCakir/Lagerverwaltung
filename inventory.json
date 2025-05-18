@@ -1,16 +1,562 @@
 [
   {
-    "id": 1746540019908,
-    "name": "Hüftsitz",
-    "quantity": 500,
-    "price": 35,
+    "id": 1747563805001,
+    "name": "Generalüberholtes Smartphone",
+    "category": "Amazon Renewed",
+    "quantity": 583,
+    "price": 233,
     "location": "Hamburg"
   },
   {
-    "id": 1747291919649,
+    "id": 1747563805002,
+    "name": "Refurbished Laptop",
+    "category": "Amazon Renewed",
+    "quantity": 366,
+    "price": 374,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805003,
+    "name": "Echo Dot",
+    "category": "Amazon-Geräte & Zubehör",
+    "quantity": 757,
+    "price": 118,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805004,
+    "name": "Fire TV Stick",
+    "category": "Amazon-Geräte & Zubehör",
+    "quantity": 373,
+    "price": 249,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805005,
+    "name": "Mobile Spiel",
+    "category": "Apps & Spiele",
+    "quantity": 864,
+    "price": 37,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805006,
+    "name": "Produktivitäts-App",
+    "category": "Apps & Spiele",
+    "quantity": 699,
+    "price": 459,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805007,
+    "name": "Motoröl",
+    "category": "Auto & Motorrad",
+    "quantity": 194,
+    "price": 260,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805008,
+    "name": "Autobatterie",
+    "category": "Auto & Motorrad",
+    "quantity": 735,
+    "price": 152,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805009,
     "name": "Wickelauflage",
-    "quantity": 500,
-    "price": 45,
+    "category": "Baby",
+    "quantity": 993,
+    "price": 304,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805010,
+    "name": "Babyflasche",
+    "category": "Baby",
+    "quantity": 91,
+    "price": 32,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805011,
+    "name": "Bohrmaschine",
+    "category": "Baumarkt",
+    "quantity": 459,
+    "price": 487,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805012,
+    "name": "Hammer",
+    "category": "Baumarkt",
+    "quantity": 621,
+    "price": 453,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805013,
+    "name": "LED-Lampe",
+    "category": "Beleuchtung",
+    "quantity": 495,
+    "price": 169,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805014,
+    "name": "Stehlampe",
+    "category": "Beleuchtung",
+    "quantity": 661,
+    "price": 397,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805015,
+    "name": "Roman",
+    "category": "Bücher",
+    "quantity": 516,
+    "price": 205,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805016,
+    "name": "Kochbuch",
+    "category": "Bücher",
+    "quantity": 301,
+    "price": 345,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805017,
+    "name": "Notizbuch",
+    "category": "Bürobedarf & Schreibwaren",
+    "quantity": 217,
+    "price": 107,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805018,
+    "name": "Kugelschreiber",
+    "category": "Bürobedarf & Schreibwaren",
+    "quantity": 993,
+    "price": 233,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805019,
+    "name": "Nachhaltige Zahnbürste",
+    "category": "Climate Pledge Friendly",
+    "quantity": 284,
+    "price": 259,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805020,
+    "name": "Recycling-Papier",
+    "category": "Climate Pledge Friendly",
+    "quantity": 217,
+    "price": 488,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805021,
+    "name": "USB-Stick",
+    "category": "Computer & Zubehör",
+    "quantity": 621,
+    "price": 155,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805022,
+    "name": "Laptopständer",
+    "category": "Computer & Zubehör",
+    "quantity": 985,
+    "price": 287,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805023,
+    "name": "Duschgel",
+    "category": "Drogerie & Körperpflege",
+    "quantity": 661,
+    "price": 54,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805024,
+    "name": "Shampoo",
+    "category": "Drogerie & Körperpflege",
+    "quantity": 511,
+    "price": 67,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805025,
+    "name": "Actionfilm DVD",
+    "category": "DVD & Blu-ray",
+    "quantity": 823,
+    "price": 101,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805026,
+    "name": "Klassiker Blu-ray",
+    "category": "DVD & Blu-ray",
+    "quantity": 370,
+    "price": 112,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805027,
+    "name": "Waschmaschine",
+    "category": "Elektro-Großgeräte",
+    "quantity": 158,
+    "price": 499,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805028,
+    "name": "Kühlschrank",
+    "category": "Elektro-Großgeräte",
+    "quantity": 209,
+    "price": 438,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805029,
+    "name": "Digitalkamera",
+    "category": "Elektronik & Foto",
+    "quantity": 742,
+    "price": 359,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805030,
+    "name": "Bluetooth-Lautsprecher",
+    "category": "Elektronik & Foto",
+    "quantity": 365,
+    "price": 274,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805031,
+    "name": "T-Shirt",
+    "category": "Fashion",
+    "quantity": 913,
+    "price": 42,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805032,
+    "name": "Jeans",
+    "category": "Fashion",
+    "quantity": 432,
+    "price": 86,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805033,
+    "name": "PC-Spiel",
+    "category": "Games",
+    "quantity": 511,
+    "price": 69,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805034,
+    "name": "Konsolenspiel",
+    "category": "Games",
+    "quantity": 707,
+    "price": 74,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805035,
+    "name": "Gartenschlauch",
+    "category": "Garten",
+    "quantity": 398,
+    "price": 129,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805036,
+    "name": "Blumenerde",
+    "category": "Garten",
+    "quantity": 812,
+    "price": 32,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805037,
+    "name": "Amazon Gutschein",
+    "category": "Geschenkgutscheine",
+    "quantity": 1000,
+    "price": 50,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805038,
+    "name": "Kino Gutschein",
+    "category": "Geschenkgutscheine",
+    "quantity": 673,
+    "price": 25,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805039,
+    "name": "Laborhandschuhe",
+    "category": "Gewerbe, Industrie & Wissenschaft",
+    "quantity": 542,
+    "price": 117,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805040,
+    "name": "Industriestaubsauger",
+    "category": "Gewerbe, Industrie & Wissenschaft",
+    "quantity": 211,
+    "price": 365,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805041,
+    "name": "Handgemachte Seife",
+    "category": "Handmade-Produkte",
+    "quantity": 374,
+    "price": 64,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805042,
+    "name": "Kerze",
+    "category": "Handmade-Produkte",
+    "quantity": 493,
+    "price": 38,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805043,
+    "name": "Hundefutter",
+    "category": "Haustier",
+    "quantity": 721,
+    "price": 59,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805044,
+    "name": "Katzenspielzeug",
+    "category": "Haustier",
+    "quantity": 392,
+    "price": 27,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805045,
+    "name": "Stativ",
+    "category": "Kamera & Foto",
+    "quantity": 617,
+    "price": 122,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805046,
+    "name": "Speicherkarte",
+    "category": "Kamera & Foto",
+    "quantity": 448,
+    "price": 39,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805047,
+    "name": "E-Book Roman",
+    "category": "Kindle-Shop",
+    "quantity": 814,
+    "price": 9,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805048,
+    "name": "Sachbuch E-Book",
+    "category": "Kindle-Shop",
+    "quantity": 682,
+    "price": 14,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805049,
+    "name": "Lippenstift",
+    "category": "Kosmetik",
+    "quantity": 333,
+    "price": 23,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805050,
+    "name": "Make-Up",
+    "category": "Kosmetik",
+    "quantity": 588,
+    "price": 31,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805051,
+    "name": "Küchenmesser",
+    "category": "Küche, Haushalt & Wohnen",
+    "quantity": 462,
+    "price": 74,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805052,
+    "name": "Topfset",
+    "category": "Küche, Haushalt & Wohnen",
+    "quantity": 295,
+    "price": 119,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805053,
+    "name": "Kaffee",
+    "category": "Lebensmittel & Getränke",
+    "quantity": 723,
+    "price": 19,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805054,
+    "name": "Olivenöl",
+    "category": "Lebensmittel & Getränke",
+    "quantity": 432,
+    "price": 22,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805055,
+    "name": "Rock-CD",
+    "category": "Musik-CDs & Vinyl",
+    "quantity": 318,
+    "price": 17,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805056,
+    "name": "Jazz-Vinyl",
+    "category": "Musik-CDs & Vinyl",
+    "quantity": 209,
+    "price": 29,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805057,
+    "name": "MP3 Album",
+    "category": "Musik-Downloads",
+    "quantity": 867,
+    "price": 11,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805058,
+    "name": "Einzeltitel-Download",
+    "category": "Musik-Downloads",
+    "quantity": 684,
+    "price": 2,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805059,
+    "name": "Gitarre",
+    "category": "Musikinstrumente & DJ-Equipment",
+    "quantity": 124,
+    "price": 379,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805060,
+    "name": "DJ-Controller",
+    "category": "Musikinstrumente & DJ-Equipment",
+    "quantity": 96,
+    "price": 439,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805061,
+    "name": "Innovatives Gadget",
+    "category": "Neue Fundstücke",
+    "quantity": 482,
+    "price": 89,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805062,
+    "name": "Neuartiger Organizer",
+    "category": "Neue Fundstücke",
+    "quantity": 537,
+    "price": 67,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805063,
+    "name": "Serienstaffel",
+    "category": "Prime Video",
+    "quantity": 951,
+    "price": 39,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805064,
+    "name": "Filmstream",
+    "category": "Prime Video",
+    "quantity": 607,
+    "price": 14,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805065,
+    "name": "Antivirenprogramm",
+    "category": "Software",
+    "quantity": 398,
+    "price": 49,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805066,
+    "name": "Office-Paket",
+    "category": "Software",
+    "quantity": 561,
+    "price": 99,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805067,
+    "name": "Puzzleset",
+    "category": "Spielzeug",
+    "quantity": 902,
+    "price": 34,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805068,
+    "name": "Plüschtier",
+    "category": "Spielzeug",
+    "quantity": 619,
+    "price": 22,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805069,
+    "name": "Yogamatte",
+    "category": "Sport & Freizeit",
+    "quantity": 482,
+    "price": 39,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805070,
+    "name": "Fahrradhelm",
+    "category": "Sport & Freizeit",
+    "quantity": 527,
+    "price": 61,
     "location": "Hamburg"
   }
 ]

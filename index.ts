@@ -2,14 +2,17 @@ import fs from 'fs/promises';
 import inquirer from 'inquirer';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { categories } from './categories';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const inventoryFile = `${__dirname}/inventory.json`;
+const categoriesFile = `${__dirname}/categories.json`;
 
 interface Product {
     id: number;
     name: string;
+    category: string;
     quantity: number;
     price: number;
     location: string;
@@ -35,8 +38,9 @@ const saveInventory = async (items: Product[]): Promise<void> => {
 // 3. Produkt hinzufuegen
 const addProduct = async (): Promise<void> => {
     const inventory = await loadInventory();
-    const { name, quantity, price, location } = await inquirer.prompt<{
+    const { name, category, quantity, price, location } = await inquirer.prompt<{
         name: string;
+        category: string;
         quantity: number;
         price: number;
         location: string;
@@ -45,6 +49,12 @@ const addProduct = async (): Promise<void> => {
             type: 'input',
             name: 'name',
             message: 'Produktname:',
+        },
+        {
+            type: 'list',
+            name: 'category',
+            message: 'wähle die Produktkategorie aus!',
+            choices: categories,
         },
         {
             type: 'number',
@@ -75,9 +85,9 @@ const addProduct = async (): Promise<void> => {
         }
     ]);
 
-    inventory.push({ id: Date.now(), name, quantity, price, location });
+    inventory.push({ id: Date.now(), name, category, quantity, price, location });
     await saveInventory(inventory);
-    console.log('✅ Produkt wurde hinzugefügt.');
+    console.log('✅ Produkt wurde hinzugefügt.\n');
 }
 // 4. Produkte listen
 
@@ -218,9 +228,19 @@ const deleteProduct = async (): Promise<void> => {
         return;
     }
     
+    const{ deleteConfirm }  = await inquirer.prompt<{ deleteConfirm: boolean }>({
+        type: 'confirm',
+        name:'deleteConfirm',
+        message: 'Möchtest du das Produkt wirklich löschen?',
+        default: false
+    })
 
-    await saveInventory(updatedInventory);
-    console.log('🗑️ Produkt gelöscht.\n');
+    if(deleteConfirm) {
+        await saveInventory(updatedInventory);
+        console.log('🗑️ Produkt gelöscht.\n');
+    } else {
+        console.log('❌ Löschvorgang abgebrochen!.\n');
+    }
 }
 
 // 8. mainmenu erstellen
