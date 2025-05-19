@@ -558,5 +558,165 @@
     "quantity": 527,
     "price": 61,
     "location": "Hamburg"
+  },
+  {
+    "id": 1747563805071,
+    "name": "Generalüberholtes MacBook Pro",
+    "category": "Amazon Renewed",
+    "quantity": 120,
+    "price": 1499,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805072,
+    "name": "Alexa Echo Show 15",
+    "category": "Amazon-Geräte & Zubehör",
+    "quantity": 250,
+    "price": 279,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805073,
+    "name": "CarPlay Navigationssystem",
+    "category": "Auto & Motorrad",
+    "quantity": 100,
+    "price": 499,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805074,
+    "name": "Luxuriöse Wickelkommode",
+    "category": "Baby",
+    "quantity": 75,
+    "price": 699,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805075,
+    "name": "Premium Garten-Lounge Set",
+    "category": "Garten",
+    "quantity": 60,
+    "price": 1199,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805076,
+    "name": "High-End Gaming Laptop",
+    "category": "Computer & Zubehör",
+    "quantity": 80,
+    "price": 1999,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805077,
+    "name": "Profi DJ-Controller",
+    "category": "Musikinstrumente & DJ-Equipment",
+    "quantity": 45,
+    "price": 1099,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805078,
+    "name": "Design-Kühlschrank mit Eiswürfelspender",
+    "category": "Elektro-Großgeräte",
+    "quantity": 30,
+    "price": 1399,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805079,
+    "name": "4K UHD Beamer Heimkino",
+    "category": "Elektronik & Foto",
+    "quantity": 85,
+    "price": 849,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805080,
+    "name": "Luxus-Wellnessliege aus Massivholz",
+    "category": "Küche, Haushalt & Wohnen",
+    "quantity": 40,
+    "price": 1299,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805081,
+    "name": "USB-C Ladekabel (1m)",
+    "category": "Amazon-Geräte & Zubehör",
+    "quantity": 300,
+    "price": 9,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805082,
+    "name": "Babywaschlappen 5er Pack",
+    "category": "Baby",
+    "quantity": 200,
+    "price": 7,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805083,
+    "name": "LED Nachtlicht mit Dämmerungssensor",
+    "category": "Beleuchtung",
+    "quantity": 180,
+    "price": 12,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805084,
+    "name": "Taschenbuch: 'Der kleine Prinz'",
+    "category": "Bücher",
+    "quantity": 150,
+    "price": 6,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805085,
+    "name": "A5 Collegeblock kariert",
+    "category": "Bürobedarf & Schreibwaren",
+    "quantity": 500,
+    "price": 3,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805086,
+    "name": "Reisegröße Duschgel Set",
+    "category": "Drogerie & Körperpflege",
+    "quantity": 220,
+    "price": 5,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805087,
+    "name": "Klassik-CD: Mozart Highlights",
+    "category": "Musik-CDs & Vinyl",
+    "quantity": 130,
+    "price": 10,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805088,
+    "name": "Mini-Pflanzenset Kräuter",
+    "category": "Garten",
+    "quantity": 140,
+    "price": 8,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805089,
+    "name": "Basic T-Shirt weiß (Unisex)",
+    "category": "Fashion",
+    "quantity": 250,
+    "price": 15,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747563805090,
+    "name": "Bleistift mit Radiergummi 10er Set",
+    "category": "Kindle-Shop",
+    "quantity": 400,
+    "price": 4,
+    "location": "Hamburg"
   }
 ]

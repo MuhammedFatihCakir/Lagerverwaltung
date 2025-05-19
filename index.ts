@@ -100,7 +100,7 @@ const listProducts = async (): Promise<void> => {
 
     inventory.forEach((product, index) => {
         console.log(
-          `${index + 1}. ${product.name} - Menge: ${product.quantity}, Preis: ${product.price}€, Lagerort: ${product.location}`
+          `${index + 1}. ${product.name} - Kategorie: ${product.category}, Menge: ${product.quantity}, Preis: ${product.price}€, Lagerort: ${product.location}`
         );
       });
     };
@@ -113,26 +113,44 @@ const viewProduct = async (): Promise<void> => {
         console.log('📭 Keine Produkte im Lager.\n');
         return;
     }
+    const allCategories = inventory.filter(
+        (product, index, self) =>
+            index === self.findIndex(p => p.category === product.category)
+        );
+
+    const { category } = await inquirer.prompt<{ category: string}>({
+        type: 'list',
+        name: 'category',
+        message: 'Aus welcher Kategorie?',
+        choices: allCategories.map((item) => ({
+            name: item.category,
+            value: item.category,
+        }))
+    })
+
+    let productsOfCategory = inventory.filter(product => product.category === category)
 
     const { id } = await inquirer.prompt<{ id: number}>({
         type: 'list',
         name: 'id',
-        message: 'Welches Produkt möchtest du anzeigen?',
-        choices: inventory.map((item) => ({
+        message: 'welches Produkt möchtest du anzeigen?',
+        choices: productsOfCategory.map((item) => ({
             name: item.name,
             value: item.id,
         }))
     })
 
-    let selectedItem = inventory.find(product => product.id === id);
-    if(selectedItem) {
-        console.log(`
-    Produktdetails:
-    - Name: ${selectedItem.name}
-    - Menge: ${selectedItem.quantity}
-    - Preis: ${selectedItem.price}€
-    - Lagerort: ${selectedItem.location}`);
-    }
+
+    let selectedItem = productsOfCategory.find(product => product.id === id);
+        if(selectedItem) {
+            console.log(`
+        Produktdetails:
+        - Name: ${selectedItem.name}
+        - Kategorie: ${selectedItem.category}
+        - Menge: ${selectedItem.quantity}
+        - Preis: ${selectedItem.price}€
+        - Lagerort: ${selectedItem.location}`);
+        }
 }
 
 // 6. Produkt bearbeiten
@@ -145,17 +163,35 @@ const editProduct = async (): Promise<void> => {
         return;
     }
 
-    const { id } = await inquirer.prompt<{ id: number }>({
+    const allCategories = inventory.filter(
+        (product, index, self) =>
+            index === self.findIndex(p => p.category === product.category)
+        );
+    
+    const { category } = await inquirer.prompt<{ category: string}>({
+        type: 'list',
+        name: 'category',
+        message: 'Aus welcher Kategorie?',
+        choices: allCategories.map((item) => ({
+            name: item.category,
+            value: item.category,
+        }))
+    })
+    
+    let productsOfCategory = inventory.filter(product => product.category === category)
+    
+    const { id } = await inquirer.prompt<{ id: number}>({
         type: 'list',
         name: 'id',
-        message: 'Welches Produkt möchtest du bearbeiten?',
-        choices: inventory.map((item) => ({
+        message: 'welches Produkt möchtest du anzeigen?',
+        choices: productsOfCategory.map((item) => ({
             name: item.name,
             value: item.id,
         }))
     })
 
-    const item = inventory.find(product => product.id === id);
+    const latestInventory = await loadInventory();
+    const item = latestInventory.find(product => product.id === id);
     if(!item) {
         console.log('❌ Produkt nicht gefunden.');
         return;
@@ -194,13 +230,24 @@ const editProduct = async (): Promise<void> => {
         }
         ]);
 
-        item.name = name;
-        item.quantity = quantity;
-        item.price = price;
-        item.location = location;
+        const { editConfirm } = await inquirer.prompt<{ editConfirm: boolean }>({
+            type: 'confirm',
+            name: 'editConfirm',
+            message: 'Möchtest du das Produkt wirklich bearbeiten?',
+            default: false
+        })
 
-        await saveInventory(inventory);
-        console.log('✏️ Produkt aktualisiert.\n');
+        if(editConfirm) {
+            item.name = name;
+            item.quantity = quantity;
+            item.price = price;
+            item.location = location;
+            await saveInventory(inventory);
+            console.log('✏️ Produkt aktualisiert.\n');
+        } else {
+            console.log('❌ Bearbeitungsvorgang abgebrochen!.\n');
+        }
+
 }
 // 7. Produkt löschen
 
@@ -212,15 +259,33 @@ const deleteProduct = async (): Promise<void> => {
         return;
     }
 
-    const { id } = await inquirer.prompt<{ id: number }>({
+    const allCategories = inventory.filter(
+        (product, index, self) =>
+            index === self.findIndex(p => p.category === product.category)
+        );
+
+    const { category } = await inquirer.prompt<{ category: string}>({
+        type: 'list',
+        name: 'category',
+        message: 'Aus welcher Kategorie?',
+        choices: allCategories.map((item) => ({
+            name: item.category,
+            value: item.category,
+        }))
+    })
+
+    let productsOfCategory = inventory.filter(product => product.category === category)
+
+    const { id } = await inquirer.prompt<{ id: number}>({
         type: 'list',
         name: 'id',
-        message: 'Welches Produkt möchtest du löschen?',
-        choices: inventory.map((item) => ({
+        message: 'welches Produkt möchtest du löschen?',
+        choices: productsOfCategory.map((item) => ({
             name: item.name,
             value: item.id,
         }))
-    });
+    })
+
     const latestInventory = await loadInventory();
     const updatedInventory = latestInventory.filter(product => product.id !== id);
     if (updatedInventory.length === latestInventory.length) {
@@ -259,7 +324,7 @@ const mainMenu = async (): Promise<void> => {
             {name: '✏️  Produkt bearbeiten', value: editProduct},
             {name: '🗑️  Produkt löschen', value: deleteProduct},
             {name: '🚪 Beenden', value: 'exit'},
-            ] 
+            ]
         })
         if (action === 'exit') return;
         await action();
