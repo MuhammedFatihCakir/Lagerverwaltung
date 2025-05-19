@@ -1,8 +1,6 @@
-- typescript
-- Fragen ob wirklich löschen soll oder nicht
 
-- produkt bearbeiten: uebersicht der eigenschaften zeigen
-- nach dem aktualisieren eines Produkts uebersicht nochmal zeigen, oder noch besser:
-            - finale uüberpruüfug (so sieht nun dein Produkt. willst du es so final abspeichern?)
-- alle produkte brauchen zumindest eine Kategorie
-- zum beispiel als feature: Produkte pro Kategorie anzeigen
+
+
+
+LERTZTE AUFGABE DANN PROJEKT FERTIG
+verzeichnisee für die dateien erstellen und einmal schön ordnen.

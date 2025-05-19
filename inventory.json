@@ -718,5 +718,21 @@
     "quantity": 400,
     "price": 4,
     "location": "Hamburg"
+  },
+  {
+    "id": 1747646525314,
+    "name": "Deichselhaube",
+    "category": "Auto & Motorrad",
+    "quantity": 650,
+    "price": 15,
+    "location": "Hamburg"
+  },
+  {
+    "id": 1747648274331,
+    "name": "Rasensamen 1kg",
+    "category": "Garten",
+    "quantity": 350,
+    "price": 14,
+    "location": "Hamburg"
   }
 ]
